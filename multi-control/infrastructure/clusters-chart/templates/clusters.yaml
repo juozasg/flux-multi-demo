@@ -1,41 +1,6 @@
-# {{- range $name, $cluster := .Values.clusters }}
----
+
 apiVersion: v1
 kind: Namespace
 metadata:
-  # name: vcluster-{{ $name }}
-  name: wtfmate
-# ---
-# apiVersion: cluster.x-k8s.io/v1beta1
-# kind: Cluster
-# metadata:
-#   name: {{ $name }}
-#   namespace: vcluster-{{ $name }}
-# spec:
-#   controlPlaneRef:
-#     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
-#     kind: VCluster
-#     name: {{ $name }}
-#   infrastructureRef:
-#     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
-#     kind: VCluster
-#     name: {{ $name }}
-# ---
-# apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
-# kind: VCluster
-# metadata:
-#   name: {{ $name }}
-#   namespace: vcluster-{{ $name }}
-# spec:
-#   controlPlaneEndpoint:
-#     host: ""
-#     port: 0
-#   helmRelease:
-#     chart:
-#       name: ""
-#       repo: ""
-#       version: ""
-#     values: ""
-#   kubernetesVersion: 1.25.0
+  name: vcluster-blau
 
-# {{- end }}
