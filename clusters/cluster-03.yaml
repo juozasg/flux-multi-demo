@@ -28,4 +28,4 @@ spec:
       repo: ""
       version: ""
     values: ""
-  kubernetesVersion: 1.24.0
+  kubernetesVersion: 1.25.0
