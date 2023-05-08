@@ -1,23 +1,29 @@
+{{- range $name, $cluster := .Values.clusters }} 
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vcluster-{{ $name }}
+---
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
-  name: cluster-01
-  namespace: vcluster-cluster-01
+  name: {{ $name }}
+  namespace: vcluster-{{ $name }}
 spec:
   controlPlaneRef:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
     kind: VCluster
-    name: cluster-01
+    name: {{ $name }}
   infrastructureRef:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
     kind: VCluster
-    name: cluster-01
+    name: {{ $name }}
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
 kind: VCluster
 metadata:
-  name: cluster-01
-  namespace: vcluster-cluster-01
+  name: {{ $name }}
+  namespace: vcluster-{{ $name }}
 spec:
   controlPlaneEndpoint:
     host: ""
@@ -29,3 +35,4 @@ spec:
       version: ""
     values: ""
   kubernetesVersion: 1.25.0
+{{- end }}
