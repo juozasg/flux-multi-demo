@@ -12,6 +12,3 @@ spec:
       sourceRef:
         kind: GitRepository
         name: flux-system
-  values:
-    clusters:
-      cluster-07: {}
