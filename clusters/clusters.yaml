@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  releaseName: clusters
+  releaseName: clusters-hr
   chart:
     spec:
       chart: ./multi-control/infrastructure/clusters-chart
