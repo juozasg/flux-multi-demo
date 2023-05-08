@@ -1,4 +1,4 @@
-brew install helm vcluster clusterctrl
+brew install helm vcluster clusterctl
 kind create cluster --name multi-control
 clusterctl init --infrastructure vcluster
 export CLUSTER_NAME=cluster-01
