@@ -1,18 +1,26 @@
 ---
-# Source: clusters-chart/templates/clusters.yaml
-apiVersion: v1
-kind: Namespace
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
 metadata:
-  name: vcluster-cluster-01
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/juozasg/flux-multi-demo.git
 ---
-# Source: clusters-chart/templates/clusters.yaml
-apiVersion: v1
-kind: Namespace
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
-  name: vcluster-cluster-02
----
-# Source: clusters-chart/templates/clusters.yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: vcluster-cluster-03
+  name: clusters-2
+  namespace: flux-system
+spec:
+  interval: 5m
+  releaseName: clusters-hr
+  chart:
+    spec:
+      chart: ./multi-control/infrastructure/clusters-chart
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
