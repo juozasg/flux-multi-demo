@@ -1,0 +1,26 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-multi-demo
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  url: https://github.com/juozasg/flux-multi-demo.git
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: flux-multi-demo
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./clusters
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-multi-demo
+
