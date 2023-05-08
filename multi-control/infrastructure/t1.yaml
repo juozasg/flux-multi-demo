@@ -1,0 +1,18 @@
+---
+# Source: clusters-chart/templates/clusters.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vcluster-cluster-01
+---
+# Source: clusters-chart/templates/clusters.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vcluster-cluster-02
+---
+# Source: clusters-chart/templates/clusters.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vcluster-cluster-03
