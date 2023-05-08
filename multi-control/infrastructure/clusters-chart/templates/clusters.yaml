@@ -1,7 +1,8 @@
-{{- range $name, $cluster := .Values.clusters }}
+{{ range $name, $cluster := $.Values.clusters }}
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: vcluster-{{ $name }}
-{{-end }}
+
+{{ end }}
