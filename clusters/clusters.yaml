@@ -9,7 +9,7 @@ spec:
   releaseName: clusters
   chart:
     spec:
-      chart: ./multi-control/clusters-chart
+      chart: ./multi-control/infrastructure/clusters-chart
       sourceRef:
         kind: GitRepository
         name: flux-system
