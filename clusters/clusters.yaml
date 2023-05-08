@@ -16,6 +16,3 @@ spec:
   values:
     clusters:
       cluster-01: 'a'
-      cluster-02: 'b'
-      cluster-03: 'c'
-      cluster-04: 'd'
