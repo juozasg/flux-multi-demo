@@ -24,8 +24,8 @@ spec:
     port: 0
   helmRelease:
     chart:
-      name: null
-      repo: null
-      version: null
+      name: ""
+      repo: ""
+      version: ""
     values: ""
   kubernetesVersion: 1.24.0
